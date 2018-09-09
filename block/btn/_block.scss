@@ -1,0 +1,29 @@
+.smb-btn {
+  @include btn();
+
+  &--full {
+    width: 100%;
+    display: block;
+  }
+}
+
+.smb-btn-wrapper.alignleft,
+.smb-btn-wrapper.alignright {
+  float: none;
+}
+
+.smb-btn-wrapper.alignleft {
+  > .smb-btn {
+    float: left;
+  }
+}
+
+.smb-btn-wrapper.alignright {
+  > .smb-btn {
+    float: right;
+  }
+}
+
+.smb-btn-wrapper.aligncenter {
+  text-align: center;
+}

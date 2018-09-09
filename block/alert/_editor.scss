@@ -1,0 +1,25 @@
+@import 'settings';
+
+.smb-alert {
+  &--warning {
+    &__body {
+      > * {
+        color: adjust-hue(darken(desaturate($alert-color, 60%), 60%), -30deg); // = .smb-alert--warning
+      }
+    }
+  }
+
+  &--success {
+    &__body {
+      > * {
+        color: adjust-hue(darken(desaturate($alert-color, 70%), 70%), 40deg); // = .smb-alert--success
+      }
+    }
+  }
+
+  &__body {
+    > * {
+      color: darken(desaturate($alert-color, 60%), 60%); // = .smb-alert
+    }
+  }
+}

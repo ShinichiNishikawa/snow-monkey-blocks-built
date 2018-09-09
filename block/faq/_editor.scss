@@ -1,0 +1,10 @@
+.smb-faq {
+  &__item {
+    &__question,
+    &__answer {
+      .editor-rich-text {
+        overflow: hidden;
+      }
+    }
+  }
+}

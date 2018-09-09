@@ -1,0 +1,37 @@
+.smb-faq {
+  &__item {
+    border-bottom: 1px solid _lighter($_color-gray);
+    @include _padding(1, 0);
+
+    &:first-child {
+      border-top: 1px solid _lighter($_color-gray);
+    }
+
+    &__question,
+    &__answer {
+      @include _clearfix();
+
+      &__label {
+        @include _margin-right(1);
+        float: left;
+        @include _font-size($_base-font-size-px * 1.5);
+        line-height: 1;
+        font-weight: normal;
+        color: $color-accent;
+      }
+
+      &__body {
+        @include content();
+        overflow: hidden;
+      }
+    }
+
+    &__question {
+      @include _margin(0, 0, 1);
+      font-weight: bold;
+    }
+
+    &__answer {
+    }
+  }
+}

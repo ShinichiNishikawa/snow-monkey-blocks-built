@@ -1,0 +1,38 @@
+@import 'settings';
+
+.smb-alert {
+  @include _alert();
+  background-color: $alert-color;
+  border: 1px solid darken(desaturate($alert-color, 10%), 10%);
+  border-radius: $_border-radius;
+  color: darken(desaturate($alert-color, 60%), 60%);
+  @include _padding(.5);
+
+  &--warning {
+    background-color: adjust-hue($alert-color, -30deg);
+    border-color: adjust-hue(darken(desaturate($alert-color, 10%), 10%), -30deg);
+    color: adjust-hue(darken(desaturate($alert-color, 60%), 60%), -30deg);
+  }
+
+  &--success {
+    background-color: adjust-hue($alert-color, 40deg);
+    border-color: adjust-hue(darken(desaturate($alert-color, 15%), 15%), 40deg);
+    color: adjust-hue(darken(desaturate($alert-color, 70%), 70%), 40deg);
+  }
+
+  &__body {
+    @include content(.75);
+  }
+
+  &__title {
+    position: relative;
+    @include _margin-bottom(.25);
+    @include _padding-left(.75);
+
+    .svg-inline--fa {
+      position: absolute;
+      left: 0;
+      top: $_between-lines - .1rem;
+    }
+  }
+}

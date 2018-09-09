@@ -1,0 +1,119 @@
+.smb-step {
+  &__item {
+    position: relative;
+    @include _padding-left(1.25);
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: ($_base-font-size-px * 3.5);
+      bottom: 0;
+      left: ($_base-font-size-px * 2.5 / 2);
+      border-left: 1px dotted _light($_color-gray);
+    }
+
+    &:not(:first-child) {
+      @include _margin-top(1.5);
+    }
+
+    &__title {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      @include _margin-left(-1.25);
+      @include _margin-bottom(1);
+      font-weight: bold;
+
+      > .smb-step__item__number {
+        @include _margin-right(.5);
+        flex: 0 0 ($_base-font-size-px * 2.5);
+      }
+
+      > span {
+        flex: 1 1 auto;
+      }
+    }
+
+    &__number {
+      @include _circle($_base-font-size-px * 2.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $_color-text;
+      color: #fff;
+      font-weight: normal;
+      @include _font-size($_base-font-size-px - 4);
+      line-height: 1;
+    }
+
+    &__body {
+    }
+
+    &__summary {
+      @include content();
+    }
+
+    &__link {
+      @include _margin-top(1);
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      &__label {
+        color: $color-accent;
+        text-decoration: underline;
+      }
+
+      .fa-arrow-circle-right {
+        margin-right: .75rem;
+        color: $color-accent;
+      }
+    }
+
+    &--image-left,
+    &--image-right {
+      overflow: hidden;
+
+      .smb-step__item__figure {
+        @include _media-min(md) {
+          max-width: 33%;
+        }
+      }
+
+      .smb-step__item__body {
+        overflow: hidden;
+      }
+    }
+
+    &--image-left {
+      .smb-step__item__figure {
+        @include _margin-bottom(.5);
+
+        @include _media-min(md) {
+          float: left;
+          @include _margin-right(1);
+        }
+      }
+    }
+
+    &--image-center {
+      .smb-step__item__figure {
+        @include _margin-bottom(.5);
+      }
+    }
+
+    &--image-right {
+      .smb-step__item__figure {
+        @include _margin-bottom(.5);
+
+        @include _media-min(md) {
+          float: right;
+          @include _margin-left(1);
+        }
+      }
+    }
+  }
+}
